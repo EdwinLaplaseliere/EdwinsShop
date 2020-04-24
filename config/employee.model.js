@@ -9,7 +9,6 @@ email:{
 type:String
 },
 mobile:{
-
     Type: String
 },
 city:{
