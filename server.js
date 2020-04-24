@@ -1,7 +1,7 @@
 const express = require('express');
 const path = require('path');
 const exphbs= require('express-handlebars');
-const MongoClient = require ('mongodb').MongoClient;
+//const MongoClient = require ('mongodb').MongoClient;
 const bodyParser = require('body-parser');
 const db =require('./config/db')
 const app = express();
