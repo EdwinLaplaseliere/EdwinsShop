@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-var employeeSchema = new mongoose.Schema({
+var itemSchema = new mongoose.Schema({
     item: {
         type: String,
         required: 'This field is required.'
@@ -14,4 +14,4 @@ var employeeSchema = new mongoose.Schema({
 });
 
 
-mongoose.model('Employee', employeeSchema);
+mongoose.model('Item', itemSchema);

@@ -1,4 +1,4 @@
-<h3><a class="btn btn-secondary" href="/employee"><i class="fa fa-plus"></i> Add New</a> List Of Items</h3>
+<h3><a class="btn btn-secondary" href="/item"><i class="fa fa-plus"></i> Add New</a> List Of Items</h3>
 <table class="table table-striped">
     <thead>
     <tr><th colspan="4">Donuts</th></tr>
@@ -15,8 +15,8 @@
             <td>{{this.item}}</td>
             <td>{{this.price}}</td>
             <td>
-                <a href="/employee/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
-                <a href="/employee/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+                <a href="/item/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/item/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
             </td>
         </tr>
        

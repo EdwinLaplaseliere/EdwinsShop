@@ -1,16 +1,16 @@
 <h3>{{viewTitle}}</h3>
 
-<form action="/employee" method="POST" autocomplete="off">
-    <input type="hidden" name="_id" value="{{employee._id}}">
+<form action="/item" method="POST" autocomplete="off">
+    <input type="hidden" name="_id" value="{{item._id}}">
     <div class="form-group">
         <label>Item</label>
-        <input type="text" class="form-control" name="item" placeholder="Classic Glazed" value="{{employee.item}}">
+        <input type="text" class="form-control" name="item" placeholder="Classic Glazed" value="{{item.item}}">
         <div class="text-danger">
-            {{employee.itemError}}</div>
+            {{item.itemError}}</div>
     </div>
     <div class="form-group">
         <label>Price</label>
-        <input type="text" class="form-control" name="price" placeholder="3.00" value="{{employee.price}}">
+        <input type="text" class="form-control" name="price" placeholder="3.00" value="{{item.price}}">
       
     </div>
     <div class="form-row">
@@ -25,6 +25,6 @@
     </div>
     <div class="form-group">
         <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
-        <a class="btn btn-secondary" href="/employee/list"><i class="fa fa-list-alt"></i> View All</a>
+        <a class="btn btn-secondary" href="/item/list"><i class="fa fa-list-alt"></i> View All</a>
     </div>
 </form>
