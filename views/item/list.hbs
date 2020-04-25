@@ -1,3 +1,5 @@
+
+
 <h3><a class="btn btn-secondary" href="/item"><i class="fa fa-plus"></i> Add New</a> List Of Items</h3>
 <table class="table table-striped">
     <thead>
@@ -11,6 +13,8 @@
     </thead>
     <tbody>
         {{#each list}}
+        {{!-- {{#if (Donuts this.category)}} --}}
+        {{#ifmatches this.category "Donuts"}}
         <tr>
             <td>{{this.item}}</td>
             <td>{{this.price}}</td>
@@ -19,7 +23,8 @@
                 <a href="/item/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
             </td>
         </tr>
-       
+        {{/ifmatches}}
+        {{!-- {{/if}} --}}
         {{/each}}
     </tbody>
       <thead>
@@ -30,6 +35,22 @@
             <th></th>
         </tr>
     </thead>
+    <tbody>
+        {{#each list}}
+        {{!-- {{#if (Donuts this.category)}} --}}
+        {{#ifmatches this.category "Coffees"}}
+        <tr>
+            <td>{{this.item}}</td>
+            <td>{{this.price}}</td>
+            <td>
+                <a href="/item/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/item/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/ifmatches}}
+        {{!-- {{/if}} --}}
+        {{/each}}
+    </tbody>
           <thead>
     <tr><th colspan="4">Hot Chocolates</th></tr>
         <tr>
@@ -38,4 +59,19 @@
             <th></th>
         </tr>
     </thead>
+    <tbody>
+        {{#each list}}
+        {{#ifmatches this.category "Hot Chocolate"}}
+        <tr>
+            <td>{{this.item}}</td>
+            <td>{{this.price}}</td>
+            <td>
+                <a href="/item/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/item/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/ifmatches}}
+        
+        {{/each}}
+    </tbody>
 </table>

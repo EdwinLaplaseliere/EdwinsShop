@@ -2,6 +2,8 @@ const express = require('express');
 var router = express.Router();
 const mongoose = require('mongoose');
 const Item = mongoose.model('Item');
+const Handlebars = require('handlebars')
+
 
 router.get('/', (req, res) => {
     res.render("item/addOrEdit", {
@@ -103,5 +105,10 @@ router.get('/delete/:id', (req, res) => {
         else { console.log('Error in item delete :' + err); }
     });
 });
+
+Handlebars.registerHelper('ifmatches', function(arg1, arg2, options) {
+    return (arg1 == arg2) ? options.fn(this) : options.inverse(this);
+});
+
 
 module.exports = router;
