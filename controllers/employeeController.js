@@ -19,10 +19,9 @@ router.post('/', (req, res) => {
 
 function insertRecord(req, res) {
     var employee = new Employee();
-    employee.fullName = req.body.fullName;
-    employee.email = req.body.email;
-    employee.mobile = req.body.mobile;
-    employee.city = req.body.city;
+    employee.item = req.body.item;
+    employee.price = req.body.price;
+    employee.category = req.body.category;
     employee.save((err, doc) => {
         if (!err)
             res.redirect('employee/list');
@@ -75,12 +74,10 @@ router.get('/list', (req, res) => {
 function handleValidationError(err, body) {
     for (field in err.errors) {
         switch (err.errors[field].path) {
-            case 'fullName':
-                body['fullNameError'] = err.errors[field].message;
+            case 'item':
+                body['itemError'] = err.errors[field].message;
                 break;
-            case 'email':
-                body['emailError'] = err.errors[field].message;
-                break;
+
             default:
                 break;
         }
