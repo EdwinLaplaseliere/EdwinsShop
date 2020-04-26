@@ -11,7 +11,8 @@
     <div class="form-group">
         <label>Price</label>
         <input type="text" class="form-control" name="price" placeholder="3.00" value="{{item.price}}">
-      
+        <div class="text-danger">
+            {{item.priceError}}</div>
     </div>
     <div class="form-row">
         <div class="form-group col-md-6">

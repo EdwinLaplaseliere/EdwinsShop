@@ -23,6 +23,11 @@ function insertRecord(req, res) {
     var item = new Item();
     item.item = req.body.item;
     item.price = req.body.price;
+    if (item.price.length<2){
+        item.price=item.price + '.00';
+    } else if(item.price.length==3){
+    item.price=item.price + '0';
+    }
     item.category = req.body.category;
     item.save((err, doc) => {
         if (!err)
@@ -79,7 +84,9 @@ function handleValidationError(err, body) {
             case 'item':
                 body['itemError'] = err.errors[field].message;
                 break;
-
+            case 'price':
+            body['priceError'] = err.errors[field].message;
+            break;
             default:
                 break;
         }
