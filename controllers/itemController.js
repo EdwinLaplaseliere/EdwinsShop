@@ -4,7 +4,7 @@ const mongoose = require('mongoose'); // we need mongoose for the database
 const Item = mongoose.model('Item');// item is the database collection, it makes an Item object and sends it to the database
 const Handlebars = require('handlebars')// Handlebars is used to implement java scripts in the templates 
 
-require('dotenv').config();
+
 
 
 /**
