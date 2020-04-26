@@ -1,4 +1,10 @@
+{{!-- This file is the first one to be called when the program starts. 
+It is built using HTML and Bootstrap as well as some inline css
+It implements handlebars by passing in variables in the curly brackets
+--}}
 <h3>{{viewTitle}}</h3>
+
+{{!-- this form allows the user to add a new item --}}
 
 <form action="/item" method="POST" autocomplete="off">
     <input type="hidden" name="_id" value="{{item._id}}">
@@ -6,7 +12,7 @@
         <label>Item</label>
         <input type="text" class="form-control" name="item" placeholder="Classic Glazed" value="{{item.item}}">
         <div class="text-danger">
-            {{item.itemError}}</div>
+            {{item.itemError}}</div> 
     </div>
     <div class="form-group">
         <label>Price</label>
@@ -17,6 +23,7 @@
     <div class="form-row">
         <div class="form-group col-md-6">
             <label>Category</label>
+            {{!-- these are the four categories  --}}
             <select class="form-control" name="category">
                  <option value="Donuts">Donuts</option>
                  <option value="Hot Chocolates">Hot Chocolates</option>
