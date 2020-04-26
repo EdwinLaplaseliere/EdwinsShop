@@ -1,9 +1,9 @@
 
 
-<h3><a class="btn btn-secondary" href="/item"><i class="fa fa-plus"></i> Add New</a> List Of Items</h3>
+<h3> List Of Items <a class="btn btn-secondary" href="/item" style="float:right; background-color:#3CB371"><i class="fa fa-plus"></i> Add New</a></h3> 
 <table class="table table-striped">
     <thead>
-    <tr><th colspan="4">Donuts</th></tr>
+    <tr><th colspan="4" style="background-color: #778899; color:#ffffff; font-family: sherif;font-size:20px; border-radius:10px; border:none">Donuts</th></tr>
     
         <tr>
             <th>Item</th>
@@ -28,7 +28,7 @@
         {{/each}}
     </tbody>
       <thead>
-    <tr><th colspan="4">Coffees</th></tr>
+    <tr><th colspan="4" style="background-color: #778899; color:#ffffff; font-family: sherif;font-size:20px; border-radius:10px; border:none">Coffees</th></tr>
         <tr>
             <th>Item</th>
             <th>Price</th>
@@ -52,7 +52,7 @@
         {{/each}}
     </tbody>
           <thead>
-    <tr><th colspan="4">Hot Chocolates</th></tr>
+    <tr><th colspan="4" style="background-color: #778899; color:#ffffff; font-family: sherif;font-size:20px; border-radius:10px; border:none">Hot Chocolates</th></tr>
         <tr>
             <th>Item</th>
             <th>Price</th>
@@ -61,7 +61,30 @@
     </thead>
     <tbody>
         {{#each list}}
-        {{#ifmatches this.category "Hot Chocolate"}}
+        {{#ifmatches this.category "Hot Chocolates"}}
+        <tr>
+            <td>{{this.item}}</td>
+            <td>{{this.price}}</td>
+            <td>
+                <a href="/item/{{this._id}}"><i class="fa fa-pencil fa-lg" aria-hidden="true"></i></a>
+                <a href="/item/delete/{{this._id}}" onclick="return confirm('Are you sure to delete this record ?');"><i class="fa fa-trash fa-lg" aria-hidden="true"></i></a>
+            </td>
+        </tr>
+        {{/ifmatches}}
+        
+        {{/each}}
+    </tbody>
+    <thead>
+    <tr><th colspan="4" style="background-color: #778899; color:#ffffff; font-family: sherif;font-size:20px; border-radius:10px; border:none">Combos</th></tr>
+        <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each list}}
+        {{#ifmatches this.category "Combos"}}
         <tr>
             <td>{{this.item}}</td>
             <td>{{this.price}}</td>
